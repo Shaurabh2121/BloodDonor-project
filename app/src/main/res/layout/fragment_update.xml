@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".user_interface.UpdateFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivUpdateProfile"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:src="@drawable/profile_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        android:backgroundTint="@color/grey"
+        android:minWidth="@dimen/dp_0"
+        android:textColor="@color/red"
+        android:minHeight="@dimen/dp_0"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingEnd="@dimen/dp_15"
+        android:text="Take Pic"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivUpdateProfile" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_50"
+        android:id="@+id/tv_userName"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp_15"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivUpdateProfile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnChange">
+
+        <View
+            android:id="@+id/vFirstName"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginStart="@dimen/dp_20"
+            android:background="@drawable/person" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:id="@+id/et_name"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:backgroundTint="@color/red"
+            android:hint="Name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutOne">
+
+        <View
+            android:id="@+id/vAge"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginStart="@dimen/dp_20"
+            android:background="@drawable/circular_age" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:backgroundTint="@color/red"
+            android:text="Age"
+            android:textSize="@dimen/sp_18" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnAgeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_10"
+        app:cardCornerRadius="@dimen/dp_10"
+        android:background="@drawable/color_change_layout"
+        android:layout_marginEnd="@dimen/dp_25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutOne">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            >
+
+            <TextView
+                android:id="@+id/btnPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_7"
+                android:paddingBottom="@dimen/dp_7"
+                android:paddingEnd="@dimen/dp_15"
+                android:paddingStart="@dimen/dp_15"
+                android:text="+"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/grey1" />
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingTop="@dimen/dp_7"
+                android:paddingBottom="@dimen/dp_7"
+                android:paddingStart="@dimen/dp_25"
+                android:paddingEnd="@dimen/dp_25"
+                android:text="0"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/grey1" />
+
+            <TextView
+                android:id="@+id/btnMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/dp_7"
+                android:paddingBottom="@dimen/dp_7"
+                android:paddingEnd="@dimen/dp_15"
+                android:paddingStart="@dimen/dp_15"
+                android:text="-"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/linearLayoutFour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutThree">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutThree">
+
+            <View
+                android:id="@+id/vNumber"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/telephone" />
+
+            <EditText
+                android:id="@+id/etNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/red"
+                android:hint="Number"
+                android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <View
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/ic_baseline_add_location_alt_24" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:backgroundTint="@color/red"
+                android:hint="Location"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/linearLayoutFive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
+        app:cardCornerRadius="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutFour">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/color_change_layout"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            >
+
+            <TextView
+                android:id="@+id/btnAPositiveUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:text="A+"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/btnANegativeUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:text="A-"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/btnBPositiveUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:text="B+"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/btnBNegativeUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:text="B-"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/btnOPositiveUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:text="O+"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/btnONegativeUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:text="O-"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/btnABPositiveUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:text="AB+"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/btnABNegativeUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:text="AB-"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_15" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:id="@+id/btn_Update"
+        android:backgroundTint="@color/red"
+        android:paddingStart="@dimen/dp_30"
+        android:paddingEnd="@dimen/dp_30"
+        android:text="update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutFive" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
